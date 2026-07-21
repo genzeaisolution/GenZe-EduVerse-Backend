@@ -3,13 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
-import authRoutes from "./routes/auth.js";
-import adminRoutes from "./routes/admin.js";
 import publicRoutes from "./routes/public.js";
 
 import { requestLogger } from "./middleware/requestLogger.js";
 import { sanitizeInput } from "./utils/sanitize.js";
-import { assertAdminConfig } from "./config/adminConfig.js";
 import { logError } from "./services/errorLogService.js";
 import { logSystem, logErrorEvent } from "./utils/logger.js";
 
@@ -20,9 +17,6 @@ const PORT = process.env.PORT || 5000;
 
 // Required on Render/Cloudflare-style proxies so req.ip reflects the real client IP.
 app.set("trust proxy", 1);
-
-// Warn (non-fatal) if admin credentials aren't configured yet.
-assertAdminConfig();
 
 // Allow configuring multiple comma-separated origins for CORS.
 const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
@@ -47,11 +41,9 @@ app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
 app.use(sanitizeInput);
 
-// Visitor analytics — runs on all public (non-admin/auth/health) requests.
+// Visitor analytics — runs on all public requests.
 app.use(requestLogger);
 
-app.use("/api/auth", authRoutes);
-app.use("/api/admin", adminRoutes);
 app.use("/api", publicRoutes);
 
 app.get("/", (req, res) => {
