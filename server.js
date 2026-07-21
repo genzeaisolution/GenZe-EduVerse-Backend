@@ -3,12 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
-import chatRoutes from "./routes/chat.js";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
 import publicRoutes from "./routes/public.js";
 
-import { chatRateLimiter } from "./middleware/rateLimiter.js";
 import { requestLogger } from "./middleware/requestLogger.js";
 import { sanitizeInput } from "./utils/sanitize.js";
 import { assertAdminConfig } from "./config/adminConfig.js";
@@ -55,7 +53,6 @@ app.use(requestLogger);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", publicRoutes);
-app.use("/api", chatRateLimiter, chatRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "GenZe EduVerse API is running 🚀" });
