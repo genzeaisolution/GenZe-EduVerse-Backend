@@ -1,0 +1,12 @@
+[
+  {
+    "id": "c3dbafe1-3eaf-40de-87cd-14758448dbfd",
+    "category": "api",
+    "message": "Both models failed: AI service daily limit reached. Please try again after quota reset.",
+    "path": "/chat",
+    "ip": "::1",
+    "statusCode": 503,
+    "meta": null,
+    "timestamp": "2026-07-20T12:09:26.414Z"
+  }
+]

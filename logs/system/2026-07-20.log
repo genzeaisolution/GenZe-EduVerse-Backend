@@ -1,0 +1,3 @@
+{"timestamp":"2026-07-20T12:05:37.121Z","category":"system","severity":"info","event":"SERVER_STARTUP","sessionId":null,"message":"GenZe EduVerse backend running on port 5000","meta":{"port":"5000","nodeEnv":"development"}}
+{"timestamp":"2026-07-20T12:28:12.200Z","category":"system","severity":"info","event":"SERVER_STARTUP","sessionId":null,"message":"GenZe EduVerse backend running on port 5000","meta":{"port":"5000","nodeEnv":"development"}}
+{"timestamp":"2026-07-20T12:46:18.185Z","category":"system","severity":"info","event":"SERVER_STARTUP","sessionId":null,"message":"GenZe EduVerse backend running on port 5000","meta":{"port":"5000","nodeEnv":"development"}}

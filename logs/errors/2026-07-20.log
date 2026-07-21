@@ -1,0 +1,1 @@
+{"timestamp":"2026-07-20T12:09:26.413Z","category":"errors","severity":"error","event":"ALL_KEYS_EXHAUSTED","sessionId":"a764c59e-0ef4-47e3-8e09-1ac0272a1da3","message":"Both primary and fallback models failed: AI service daily limit reached. Please try again after quota reset.","meta":{"primaryModel":"llama-3.3-70b-versatile","fallbackModel":"llama-3.1-8b-instant"}}

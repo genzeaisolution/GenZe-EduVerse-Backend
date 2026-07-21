@@ -1,0 +1,19 @@
+{
+  "textModel": "llama-3.3-70b-versatile",
+  "textModelFallback": "llama-3.1-8b-instant",
+  "visionModel": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "visionModelFallback": "meta-llama/llama-4-maverick-17b-128e-instruct",
+  "fallbackEnabled": true,
+  "defaultTemperature": 0.35,
+  "defaultTopP": 0.9,
+  "maxTokens": 4096,
+  "subjectTemperatures": {
+    "math": 0.2,
+    "programming": 0.2,
+    "science": 0.3,
+    "medical": 0.3,
+    "law": 0.3,
+    "business": 0.45,
+    "writing": 0.45
+  }
+}
